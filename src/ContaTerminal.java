@@ -1,9 +1,10 @@
-import java.nio.charset.Charset;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class ContaTerminal {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 
         System.out.print("Por favor, digite o número da Agência: ");
         String agencia = scanner.nextLine();
@@ -21,8 +22,9 @@ public class ContaTerminal {
         // Feche o scanner após a leitura dos dados
         scanner.close();
 
-        System.out.println();
+        System.out.println(); // Linha em branco
 
+        // Exiba as informações fornecidas pelo usuário
         System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco,");
         System.out.println("sua agência é " + agencia + ", conta " + numero + " e seu saldo " + saldo + " já está disponível para saque.");
     }
